@@ -1,0 +1,77 @@
+.btnLogin {
+     -fx-graphic: url("../images/login.png");
+}
+
+.background_image {
+	-fx-background-image: url("../images/bg.jpg");
+	 -fx-background-repeat : no-repeat;
+}
+
+.button_exit {
+    -fx-pref-width: 45px;
+    -fx-background-color:  white ;
+    -fx-background-radius: 60px;
+    -fx-pref-height: 45px;
+    -fx-min-width: -fx-pref-width;
+    -fx-max-width: -fx-pref-width;
+    -fx-min-height: -fx-pref-height;
+    -fx-max-height: -fx-pref-height;
+    -jfx-button-type: RAISED;
+}
+
+.save-icon {
+	 -fx-background-image: url("../images/save.png");
+	 -fx-background-repeat : no-repeat;
+}
+
+.button_exit:hover {
+	-fx-background-color:  #1794B2 ;
+	-fx-text-fill : white;
+}
+
+.number_buttons {
+	-fx-border-color :  #C1BFBF;
+    -fx-border-radius:  30;
+    -fx-background-radius: 30;
+    -fx-text-fill : #273850;
+}
+
+
+.btn_cursor {
+	-fx-cursor: hand;
+}
+
+.btn {
+	-fx-cursor: hand;
+    -fx-content-display: right;
+    -fx-background-radius : 30;
+    -fx-border-radius: 30;
+}
+
+
+.mainContainer {
+	-fx-background-color : white;
+	-fx-border-color:  #BFBFBF;
+}
+
+.pinkColor {
+	-fx-background-color : #1794B2;
+}
+
+.buttonSize {
+	-fx-pref-width : 120px;
+	-fx-pref-height : 40px;
+}
+
+.jfx-text-field , .jfx-text-area , .jfx-password-field {
+    -jfx-focus-color:  #1794B2;
+    -jfx-unfocus-color:  #1794B2;
+    -fx-font-family : "Roboto Light";
+    -fx-font-size : 15px;
+}
+
+
+.icons {
+    -fx-fill : #1794B2;
+ }
+

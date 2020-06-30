@@ -1,0 +1,57 @@
+.btn {
+	-fx-border-color :   #168DAA;
+	-fx-border-width : 0px 0px 1px 0px;
+}
+
+.btnLogout {
+     -fx-graphic: url("../images/logout.png");
+}
+
+.btnDataSet {
+	 -fx-background-color : white;
+     -fx-graphic: url("../images/dataset.png");
+}
+
+
+.btnDataSet:focused {
+     -fx-graphic: url("../images/dataset_white.png");
+     -fx-background-color :  #168DAA;
+     -fx-text-fill : white;
+}
+
+.btnPie {
+	 -fx-background-color : white;
+     -fx-graphic: url("../images/pie.png");
+}
+
+
+.btnPie:focused {
+     -fx-graphic: url("../images/pie_white.png");
+     -fx-background-color :  #168DAA;
+     -fx-text-fill : white;
+}
+
+
+.btnActivity {
+	 -fx-background-color : white;
+     -fx-graphic: url("../images/activity.png");
+}
+
+.btnActivity:focused {
+     -fx-graphic: url("../images/activity_white.png");
+     -fx-background-color :  #168DAA;
+     -fx-text-fill : white;
+}
+
+
+.btnEditProfile {
+	 -fx-background-color : white;
+     -fx-graphic: url("../images/edit_profile.png");
+}
+
+.btnEditProfile:focused {
+     -fx-graphic: url("../images/edit_profile_white.png");
+     -fx-background-color :  #168DAA;
+     -fx-text-fill : white;
+}
+
