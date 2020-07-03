@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -51,12 +52,12 @@ public class dashboardController implements Initializable {
 	}
 	
 	@FXML
-	public void logout() throws SQLException {
+	public void logout() throws SQLException, IOException {
 		activity_trail activity = new activity_trail();
 		users u = new users(Utils.idUser, Utils.full_name);
 		activity.setActivity_name("Logout");
 		activity.setUsers(u);
 		ControlDAO.getControlDao().getActivityTrailDao().insertActivity(activity);
-		Platform.exit();
+		new Utils().openScene("register", btnLogout, "Register");
 	}
 }

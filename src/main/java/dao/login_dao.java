@@ -52,6 +52,31 @@ public class login_dao extends DAO {
 
 	}
 
+	public boolean check_user_and_fullName(String username,String fullName) {
+		String sql = "SELECT username, id, full_name from simon_app.users  WHERE username = ? and full_name = ?";
+		try {
+			stm = connector.prepareStatement(sql);
+			stm.setString(1, username);
+			stm.setString(2, fullName);
+			rs = stm.executeQuery();
+
+			while(rs.next()) {
+				Utils.username = rs.getString(1);
+				Utils.idUser = rs.getInt(2);
+				Utils.full_name = rs.getString(3);
+				return rs.getString(1).equals(username) && rs.getString(3).equals(fullName);
+			}
+			stm.close();
+			rs.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return false;
+
+	}
+	
 	public boolean check_username(String username) throws SQLException {
 		String query = "select * from simon_app.users where username = '"+username+"'";
 		stm = connector.prepareStatement(query);

@@ -39,5 +39,16 @@ public class users_dao extends DAO {
 			stm.executeUpdate();
 			stm.close();
 	}
+	
+	public void update_password(users user) throws SQLException {
+		String update_user = "update simon_app.users set password = ? where id = ?";
+		stm = connector.prepareStatement(update_user);
+
+		stm.setString(1, Utils.encrypt(Utils.key, Utils.initVector, user.getPassword()));
+		stm.setInt(2, user.getId());
+		
+		stm.executeUpdate();
+		stm.close();
+}
 
 }

@@ -53,6 +53,8 @@ public class register implements Initializable {
 		u.setPhone_number(txtPhoneNumber.getText());
 		if(checkBoxAdmin.isSelected())
 			u.setAccess("Admin");
+		else
+			u.setAccess("User");
 		
 		ControlDAO.getControlDao().getUsersDao().add_user(u);
 		
@@ -68,5 +70,9 @@ public class register implements Initializable {
 	private void close() throws SQLException, IOException {
 		Platform.exit();
 	}
-
+	
+	@FXML
+	private void forgotPassword() throws IOException {
+		new Utils().openScene("forgotPassword", btnRegister, "Forgot Password");
+	}
 }

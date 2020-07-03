@@ -13,7 +13,7 @@ public class db_connection {
 	private db_connection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/expensetrackingapp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/simon_app","root","root");
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException ex) {
 			System.out.println("Not connected to database");
 		}
