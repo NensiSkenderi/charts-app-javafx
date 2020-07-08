@@ -30,8 +30,11 @@ public class datasetController extends VBox {
 
 	@FXML
 	public void initialize() throws Exception {
+		//here we add all country data to a list so that it will be displayed in the pie chart
 		valueList.addAll(ControlDAO.getControlDao().getCountryDao().getAll());
+		//here we create that pie chart
 		PieChart pieChart = new PieChart(valueList);
+		//add the pie chart to vbox (vbox is a FXML element, we can find it in the view)
 		vbox.getChildren().add(pieChart);
 		pieChart.prefHeightProperty().bind(vbox.heightProperty());
 	}

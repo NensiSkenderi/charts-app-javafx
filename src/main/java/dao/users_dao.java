@@ -2,7 +2,6 @@ package dao;
 
 import java.sql.SQLException;
 
-import javafx.scene.control.Alert.AlertType;
 import model.users;
 import utils.Utils;
 

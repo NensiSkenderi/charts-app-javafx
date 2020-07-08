@@ -39,8 +39,10 @@ public class login implements Initializable {
 			return;
 		}
 
+		//check if the credentials are right (username and password should match , like in every other application)
 		if(ControlDAO.getControlDao().getLoginDao().check_user_and_pass(user,passwd))  {
-			new Utils().openScene("dashboard", btnLogin, "Dashboard");
+			new Utils().openScene("dashboard", btnLogin, "Dashboard", true);
+			//we keep track of the user activity, time and date, which user does the activity and what the activity is
 			activity_trail activity = new activity_trail();
 			users u = new users(Utils.idUser, Utils.full_name);
 			activity.setActivity_name("Login");

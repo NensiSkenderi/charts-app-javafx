@@ -78,7 +78,7 @@ public class Utils {
 		return null;
 	}
 
-	public void openScene(String view_name, Button btn, String title) throws IOException {
+	public void openScene(String view_name, Button btn, String title, boolean resizable) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/"+ view_name +".fxml")); 
 		Parent root=(Parent)loader.load();
 		Scene scene = new Scene(root);
@@ -99,6 +99,7 @@ public class Utils {
 				}
 			});
 		}
+		stage.setResizable(resizable);
 		stage.setTitle(title);
 		stage.show();
 

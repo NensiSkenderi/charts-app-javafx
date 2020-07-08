@@ -48,17 +48,18 @@ public class editProfileController extends VBox {
 
 	@FXML
 	private void saveChanges() throws SQLException {
-		
+		//user can not continue if he does not fill all the fields so we check if they are empty
 		if(Utils.check_empty_text(txtUsername.getText(), txtPassword.getText(), txtFullName.getText())) {
 			lblUpdate.setText("**Fill out all the fields!");	
 			return;
 		}
-
+		//we check if passwords match
 		if (!txtPassword.getText().toString().equals(txtConfirmPass.getText().toString())) {
 			lblUpdate.setText("**Password does not match!"); 
 			return;
 		}
 
+		//here we create a users object so that we can update our existing user with the values taken from the textfields
 		users u = new users();
 		u.setFull_name(txtFullName.getText());
 		u.setUsername(txtUsername.getText());
@@ -67,6 +68,7 @@ public class editProfileController extends VBox {
 		u.setPhone_number(txtPhoneNumber.getText());
 		u.setId(Utils.idUser);
 		
+		//here we update this user
 		ControlDAO.getControlDao().getUsersDao().update_user(u);
 		lblUpdate.setText("**Profile Updated Successfully!"); 
 		lblUpdate.setStyle("-fx-text-fill : #1dc22e;");

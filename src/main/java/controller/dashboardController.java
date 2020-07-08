@@ -26,11 +26,14 @@ public class dashboardController implements Initializable {
 	private VBox mainVbox, vbox;
 
 	public void initialize(URL location, ResourceBundle resources) {
+		//here we check the user rights because only Admin can se the Activity
+		//if user has User rights then we remove the button to see the activity
 		if(Utils.access.equals("User"))
 			vbox.getChildren().remove(btnActivity);
 		Controllers.getDataset(mainVbox);
 	}
 
+	//here we open the dataset view
 	@FXML
 	public void dataset() {
 		Controllers.getDataset(mainVbox);
@@ -58,6 +61,6 @@ public class dashboardController implements Initializable {
 		activity.setActivity_name("Logout");
 		activity.setUsers(u);
 		ControlDAO.getControlDao().getActivityTrailDao().insertActivity(activity);
-		new Utils().openScene("register", btnLogout, "Register");
+		new Utils().openScene("register", btnLogout, "Register", false);
 	}
 }

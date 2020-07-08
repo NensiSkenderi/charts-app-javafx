@@ -33,6 +33,7 @@ public class Controllers {
 		config(box, editProfileController);
 	}
 	
+	//when we click on a button, we load the controller that we define, and also the view we want
 	public static void config(VBox box, VBox content) {
 		box.getChildren().clear();
 		box.getChildren().add(content);

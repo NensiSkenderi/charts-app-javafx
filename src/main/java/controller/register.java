@@ -7,14 +7,10 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
 import dao.ControlDAO;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -40,11 +36,13 @@ public class register implements Initializable {
 			return;
 		}
 	
+		//if username already exists, you should choose a new one
 		if(ControlDAO.getControlDao().getLoginDao().check_username(txtUsername.getText())) {
 			lblError.setText("*Warning! Username exists!");	
 			return;
 		}
 		
+		//we create the new user from the textfields
 		users u = new users();
 		u.setFull_name(txtFullName.getText());
 		u.setUsername(txtUsername.getText());
@@ -56,14 +54,16 @@ public class register implements Initializable {
 		else
 			u.setAccess("User");
 		
+		//we add this user in the database
 		ControlDAO.getControlDao().getUsersDao().add_user(u);
 		
-		new Utils().openScene("login", btnRegister,"Login");
+		//now the user can login
+		new Utils().openScene("login", btnRegister,"Login", false);
 	}
 	
 	@FXML
 	private void login() throws SQLException, IOException {
-		new Utils().openScene("login", btnRegister,"Login");
+		new Utils().openScene("login", btnRegister,"Login", false);
 	}
 	
 	@FXML
@@ -73,6 +73,6 @@ public class register implements Initializable {
 	
 	@FXML
 	private void forgotPassword() throws IOException {
-		new Utils().openScene("forgotPassword", btnRegister, "Forgot Password");
+		new Utils().openScene("forgotPassword", btnRegister, "Forgot Password", false);
 	}
 }

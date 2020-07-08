@@ -32,13 +32,13 @@ public class newPassword implements Initializable {
 			u.setPassword(txtPassword.getText());
 			u.setId(Utils.idUser);
 			ControlDAO.getControlDao().getUsersDao().update_password(u);
-			new Utils().openScene("register", btnSave,"register");
+			new Utils().openScene("register", btnSave,"register", false);
 		}
 	}
 	
 	@FXML
 	private void cancel() throws IOException {
-		new Utils().openScene("register", btnSave,"register");
+		new Utils().openScene("register", btnSave,"register", false);
 	}
 
 	@Override
