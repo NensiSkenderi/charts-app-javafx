@@ -21,11 +21,11 @@ Import the simon_app_db.sql file to MySQL workbench to fill some data in the app
 In the project we have 2 roles, User and Admin which have partial rights 
 to access different sections of the project.
 
-use the following credentials for USER access :
+#### use the following credentials for USER access :
     username : nensi
     password : nensi
     
-use the following credentials for ADMIN access :
+#### use the following credentials for ADMIN access :
     username : simon
     password : simon
 
