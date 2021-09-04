@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import model.activity_trail;
@@ -85,6 +86,7 @@ public class Utils {
 		Stage old_stage = (Stage)btn.getScene().getWindow();
 		Stage stage = new Stage();
 		stage.setScene(scene);
+		stage.getIcons().add(new Image("/images/icon.png"));
 		old_stage.close();
 		if(view_name == "dashboard") {
 			stage.setOnCloseRequest( e-> {
