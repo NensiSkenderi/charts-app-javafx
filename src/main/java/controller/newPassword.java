@@ -12,6 +12,7 @@ import dao.ControlDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import model.activity_trail;
 import model.users;
 import utils.Utils;
 
@@ -32,6 +33,11 @@ public class newPassword implements Initializable {
 			u.setPassword(txtPassword.getText());
 			u.setId(Utils.idUser);
 			ControlDAO.getControlDao().getUsersDao().update_password(u);
+			activity_trail activity = new activity_trail();
+			users u1 = new users(Utils.idUser, Utils.full_name);
+			activity.setActivity_name("Password Changed");
+			activity.setUsers(u1);
+			ControlDAO.getControlDao().getActivityTrailDao().insertActivity(activity);
 			new Utils().openScene("register", btnSave,"register", false);
 		}
 	}

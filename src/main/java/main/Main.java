@@ -14,7 +14,6 @@ public class Main extends Application {
 	
     @Override
     public void start(Stage primaryStage) throws IOException {       
-    	//first view that opens is the register view
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/register.fxml"));
     	root=(Parent)loader.load();
     	
