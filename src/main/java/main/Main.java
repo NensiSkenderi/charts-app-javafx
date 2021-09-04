@@ -11,12 +11,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	public Parent root;
-	
+
     @Override
-    public void start(Stage primaryStage) throws IOException {       
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/register.fxml"));
-    	root=(Parent)loader.load();
-    	
+    public void start(Stage primaryStage) throws IOException {
+    	root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/register.fxml"));
     	Scene scene = new Scene(root);
     	primaryStage.setResizable(false);
     	primaryStage.setScene(scene);
